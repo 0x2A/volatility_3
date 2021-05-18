@@ -216,7 +216,7 @@ import volatility.conf as conf
 import volatility.obj as obj
 import volatility.debug as debug
 import volatility.exceptions as exceptions
-import cPickle as pickle
+import pickle
 config = conf.ConfObject()
 
 ## Where to stick the cache
@@ -260,7 +260,7 @@ class CacheNode(object):
             result = self.storage.load(item_url)
             if result:
                 return result
-        except Exception, e:
+        except Exception as e:
             raise KeyError(e)
 
         ## Make a new empty Node instead on demand
